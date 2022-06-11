@@ -1,8 +1,8 @@
 export { matchers } from './client-matchers.js';
 
 export const components = [
-	() => import("..\\runtime\\components\\layout.svelte"),
-	() => import("..\\runtime\\components\\error.svelte"),
+	() => import("..\\..\\src\\routes\\__layout.svelte"),
+	() => import("..\\..\\src\\routes\\__error.svelte"),
 	() => import("..\\..\\src\\routes\\index.svelte")
 ];
 

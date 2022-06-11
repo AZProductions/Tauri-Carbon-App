@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -12,8 +12,7 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: 'app.html'
-		}),
-		ssr: false
+		})
 	}
 };
 

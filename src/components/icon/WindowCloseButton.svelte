@@ -1,0 +1,1 @@
+<img src='/Close.svg'/>
