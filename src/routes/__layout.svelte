@@ -20,6 +20,8 @@
 		SideNavDivider
 	} from 'carbon-components-svelte';
 	import { onMount } from 'svelte';
+	import WindowMinimizeButton from '../components/icon/WindowMinimizeButton.svelte';
+	import WindowMaximizeButton from '../components/icon/WindowMaximizeButton.svelte';
 
 	import Settings from 'carbon-icons-svelte/lib/Settings.svelte';
 	import Close from 'carbon-icons-svelte/lib/Close.svelte';
@@ -82,8 +84,8 @@
 	<Header
 		data-tauri-drag-region
 		class="titlebar"
-		company="Vacaro"
-		platformName="Analytics"
+		company="Tauri"
+		platformName="Carbon App"
 		bind:isSideNavOpen
 	>
 		<svelte:fragment slot="skip-to-content">
@@ -142,18 +144,27 @@
 			.closebutton:hover {
 				background-color: #e81123;
 			}
+			.closebutton:focus {
+				border: 1px solid solid var(--cds-ui-background);
+			}
 			.utilbutton {
 				height: 30px;
 				top: 0;
 				margin-bottom: 17px;
 			}
 			.utilbutton:hover {
-				background-color: var(--cds-ui-background);
+				background-color: #262626;
+			}
+			.utilbutton:focus {
+				border: 1px solid solid var(--cds-ui-background);
 			}
 		</style>
-		<div style="width=100%; margin-left: 20px; height=100%" data-tauri-drag-region={true}>
-			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={Minimize} />
-			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={Maximize} />
+		<div
+			style="width=100%; margin-left: 20px; margin-right: 1.5px; height=100%"
+			data-tauri-drag-region={true}
+		>
+			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={WindowMinimizeButton} />
+			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={WindowMaximizeButton} />
 			<HeaderGlobalAction on:click={closeApp} aria-label="Close" class="closebutton" icon={Close} />
 		</div>
 	</Header>
