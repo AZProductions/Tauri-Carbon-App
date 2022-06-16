@@ -23,6 +23,9 @@
 	import WindowMinimizeButton from '../components/icon/WindowMinimizeButton.svelte';
 	import WindowMaximizeButton from '../components/icon/WindowMaximizeButton.svelte';
 
+	// import CheckboxUndeterminate from 'carbon-icons-svelte/lib/Checkbox.svelte';
+
+	import CheckBox from 'carbon-icons-svelte/lib/CheckBox.svelte';
 	import Settings from 'carbon-icons-svelte/lib/Settings.svelte';
 	import Close from 'carbon-icons-svelte/lib/Close.svelte';
 	import Minimize from 'carbon-icons-svelte/lib/Minimize.svelte';
@@ -52,8 +55,12 @@
 		document.documentElement.setAttribute('theme', themeKey);
 	});
 
+	// import { appWindow } from '@tauri-apps/api/window';
+
 	function closeApp() {
-		// appWindow.close();
+		onMount(() => {
+			// appWindow.close();
+		});
 	}
 
 	function themeChange() {
@@ -163,8 +170,8 @@
 			style="width=100%; margin-left: 20px; margin-right: 1.5px; height=100%"
 			data-tauri-drag-region={true}
 		>
-			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={WindowMinimizeButton} />
-			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={WindowMaximizeButton} />
+			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={CheckBox} />
+			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={CheckBox} />
 			<HeaderGlobalAction on:click={closeApp} aria-label="Close" class="closebutton" icon={Close} />
 		</div>
 	</Header>
