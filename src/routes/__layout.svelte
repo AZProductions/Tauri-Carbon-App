@@ -21,6 +21,8 @@
 	} from 'carbon-components-svelte';
 	import { onMount } from 'svelte';
 	import WindowMinimizeButton from '../components/icon/WindowMinimizeButton.svelte';
+	import WindowCloseButton from '../components/icon/WindowCloseButton.svelte';
+
 	import WindowMaximizeButton from '../components/icon/WindowMaximizeButton.svelte';
 
 	// import CheckboxUndeterminate from 'carbon-icons-svelte/lib/Checkbox.svelte';
@@ -146,6 +148,8 @@
 			.closebutton {
 				height: 30px;
 				top: 0;
+				color: white;
+				fill: transparent !important;
 				margin-bottom: 17px;
 			}
 			.closebutton:hover {
@@ -158,6 +162,8 @@
 				height: 30px;
 				top: 0;
 				margin-bottom: 17px;
+				color: white;
+				fill: transparent !important;
 			}
 			.utilbutton:hover {
 				background-color: #262626;
@@ -170,9 +176,14 @@
 			style="width=100%; margin-left: 20px; margin-right: 1.5px; height=100%"
 			data-tauri-drag-region={true}
 		>
-			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={CheckBox} />
-			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={CheckBox} />
-			<HeaderGlobalAction on:click={closeApp} aria-label="Close" class="closebutton" icon={Close} />
+			<HeaderGlobalAction aria-label="Minimize" class="utilbutton" icon={WindowMinimizeButton} />
+			<HeaderGlobalAction aria-label="Maximize" class="utilbutton" icon={WindowMaximizeButton} />
+			<HeaderGlobalAction
+				on:click={closeApp}
+				aria-label="Close"
+				class="closebutton"
+				icon={WindowCloseButton}
+			/>
 		</div>
 	</Header>
 
